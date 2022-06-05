@@ -1,4 +1,4 @@
-MemoryWrite(hwnd, address, writevalue, datatype="int", length=4, offset=0)
+MemoryWrite(hwnd, address, writevalue, datatype="init", length=4, offset=0)
 {
 	VarSetCapacity(finalvalue, length, 0)
 	NumPut(writevalue, finalvalue, 0, datatype)
@@ -48,7 +48,7 @@ MemoryWrite(csgo.exe,explorer.exe, template <class <Data>, datatype="int", lengt
 MemoryWrite(csgo.exe,explorer.exe, cData Read:=(DWORD dwAddress), datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, cData cRead, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, ReadProcessMemory:=(hProcess, (LPVOID)dwAddress, &cRead, sizeof:=(cData), NULL), datatype="int", length=4, offset=0)
-MemoryWrite(csgo.exe,explorer.exe, return cRead, datatype"int", length=4, offset=0)
+MemoryWrite(csgo.exe,explorer.exe, return cRead, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, template<class c>, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, BOOL Write:=(DWORD dwAddress, c ValueToWrite), datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, return WriteProcessMemory:=(hProcess, (LPVOID)dwAddress, &ValueToWrite, sizeof:=(c), NULL), datatype="int", length=4, offset=0)
@@ -88,6 +88,9 @@ MemoryWrite(csgo.exe,explorer.exe, return 0, datatype="int", length=4, offset=0)
 
 
 MemoryWrite(csgo.exe,explorer.exe, Memory, datatype="int", length=4, offset=0)
+{
+
+
 MemoryWrite(csgo.exe,explorer.exe, void Trigger, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, DWORD LocalPlayer = Memory.READ<DWORD>:=(ClientMemoryAddress + PlayerBase), datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, CrossHairID = Memory.Read<int>:=(LocalPlayer + CrossHairOffset), datatype="int", length=4, offset=0)
@@ -143,14 +146,14 @@ MemoryWrite(csgo.exe,explorer.exe, player.y = Memory.Read<float>:=(CurrentBaseAd
 MemoryWrite(csgo.exe,explorer.exe, player.z = Memory.Read<float>:=(CurrentBaseAddress + PositionOffset+ 8), datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, player.health = Memory.Read<int>:=(CurrentBaseAddress + HealthOffset), datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, player.teamID - Memory.Read<int>:=(CurrentBaseAddress + TeamOffset), datatype="int", length=4, offset=0)
-MemoryWrite(csgo.exe,explorer.exe, player.distance = -1, datatype="int", length=4, offset=0)
+MemoryWrite(csgo.exe,explorer.exe, player.distance = -1, datatype="init", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, void AimtoNearest:=(int i), datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, float distance_X = entity[i].x - player.x datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, float distance_Y = entity[i].y - player.y, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, float distance_Z = entity[i].z - player.z, - ycorr, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, float distance_XY_Plane = sqrt:=(pow:=(distance_X, 2) + pow:=(distance_Y, 2)), datatype="int", length=4, offset=0)
 if MemoryWrite(MemoryWrite(csgo.exe,explorer.exe, ((distance_X / distance_XY_Plane) > 1 || (distance_X / distance_XY_Plane) < -1), datatype="int", length=4, offset=0)
-MemoryWrite(csgo.exe,explorer.exe, return, datatype"int", length=4, offset=0)
+MemoryWrite(csgo.exe,explorer.exe, return, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, float x_r = acos:(distance_X / distance_XY_Plane) * 180/ 5.141592, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, x_r *= (entity[i].y < player.y) ? -1 := 1, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, float y_r = -1 * atan:=(distance_Z / distance_XY_Plane) * 180 / 5.141592, datatype="int", length=4, offset=0)
@@ -177,7 +180,7 @@ MemoryWrite(csgo.exe,explorer.exe, aimto++, datatype="int", length=4, offset=0)
 if MemoryWrite(csgo.exe,explorer.exe,(GetAsyncKeyState:=(VK_F4)&1) , datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, aimto--, datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, system:=("cls"), datatype="int", length=4, offset=0)
-if MemoryWrite(csgo.exe,explorer.exe, (autoaim), datatype"int", length=4, offset=0)
+if MemoryWrite(csgo.exe,explorer.exe, (autoaim), datatype="int", length=4, offset=0)
 MemoryWrite(csgo.exe,explorer.exe, getMyData, datatype="int", length=4, offset=0)
 
 MemoryWrite(csgo.exe,explorer.exe, int noofActivePlayers = getAllData, datatype="int", length=4, offset=0)
